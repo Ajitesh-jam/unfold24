@@ -29,3 +29,7 @@ function App() {
  );
 }
 export default App;
+
+
+// REACT_APP_GOOGLE_CLIENT_ID=  "301666367171-gdi7g7c02pv97d8mbb553kbct9m611so.apps.googleusercontent.com"
+// REACT_APP_OKTO_CLIENT_API_KEY= "8a001bd6-0804-4284-805c-b8191c07bae9"
