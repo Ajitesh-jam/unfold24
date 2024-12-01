@@ -59,15 +59,13 @@ const Contact = () => {
     ];
 
     return (
-        <section className="py-20 bg-gray-50 relative overflow-hidden">
-            {/* Background Elements */}
+        <section id="contact" className="py-20 bg-gray-50 relative overflow-hidden">
             <div className="absolute inset-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 to-teal-50/90"></div>
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.1),transparent)]"></div>
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <span className="px-4 py-1 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4 inline-block">
                         Contact Us
@@ -84,7 +82,6 @@ const Contact = () => {
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-12">
-                    {/* Contact Form */}
                     <div className="relative">
                         <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl blur opacity-20"></div>
                         <div className="relative bg-white rounded-2xl shadow-lg p-8">

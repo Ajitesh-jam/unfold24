@@ -83,7 +83,7 @@ const Team = () => {
     ];
 
     return (
-        <section className="py-20 bg-gray-50 relative overflow-hidden">
+        <section id="team" className="py-20 bg-gray-50 relative overflow-hidden">
             <div className="absolute inset-0">
                 <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-b from-blue-50/50 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-t from-teal-50/50 to-transparent"></div>

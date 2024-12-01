@@ -1,5 +1,12 @@
 import React from 'react';
-import { ArrowRight, Heart, Shield, Clock } from 'lucide-react';
+import {
+    Heart,
+    Shield,
+    Clock,
+    ArrowRight,
+    UserCircle,
+    Users
+} from 'lucide-react';
 
 const Hero = () => {
     return (
@@ -8,9 +15,12 @@ const Hero = () => {
                 <div className="absolute -inset-[10px] bg-gradient-to-tr from-blue-600/30 via-purple-500/30 to-teal-500/30 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute top-1/4 -right-1/4 w-96 h-96 bg-gradient-to-bl from-blue-600/40 via-purple-500/40 to-teal-500/40 rounded-full blur-3xl animate-pulse delay-1000"></div>
             </div>
+
             <div className="container relative mx-auto px-4 pt-20">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="text-white relative">
+                    {/* Text Content */}
+                    <div className="text-white">
+                        {/* Floating Badge */}
                         <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-lg rounded-full mb-6">
                             <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
                             <span className="text-sm font-medium text-gray-200">
@@ -41,20 +51,7 @@ const Hero = () => {
                             Experience healthcare reimagined with cutting-edge technology and
                             compassionate care. Your well-being is our priority, available 24/7.
                         </p>
-                        <div className="flex flex-wrap gap-4">
-                            <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-500 rounded-full">
-                                <span className="absolute inset-0 bg-white rounded-full transition-transform transform scale-0 group-hover:scale-100 opacity-25"></span>
-                                <span className="relative flex items-center text-white font-semibold">
-                                    Explore Our Services
-                                    <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                                </span>
-                            </button>
-
-                            <button className="px-8 py-4 border-2 border-white/20 text-white rounded-full hover:bg-white/10 transition-colors">
-                                Learn More
-                            </button>
-                        </div>
-                        <div className="flex flex-wrap gap-4 mt-12">
+                        <div className="flex flex-wrap gap-4 mb-12">
                             {[
                                 { icon: <Heart className="w-5 h-5" />, text: "24/7 Care" },
                                 { icon: <Shield className="w-5 h-5" />, text: "Certified Doctors" },
@@ -70,28 +67,49 @@ const Hero = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="relative">
-                        <div className="relative z-10">
-                            <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600/20 to-teal-500/20 rounded-full blur-2xl"></div>
-                            <img
-                                src="/api/placeholder/600/600"
-                                alt="Healthcare Professional"
-                                className="relative rounded-3xl transform hover:scale-105 transition-transform duration-500"
-                            />
-                        </div>
-                        <div className="absolute -left-12 top-1/4 bg-white/10 backdrop-blur-xl p-4 rounded-xl border border-white/20 transform hover:-translate-y-2 transition-transform">
-                            <div className="text-white">
-                                <span className="block text-2xl font-bold">75+</span>
-                                <span className="text-sm opacity-80">Expert Doctors</span>
-                            </div>
-                        </div>
 
-                        <div className="absolute -right-8 bottom-1/4 bg-white/10 backdrop-blur-xl p-4 rounded-xl border border-white/20 transform hover:-translate-y-2 transition-transform">
-                            <div className="text-white">
-                                <span className="block text-2xl font-bold">24/7</span>
-                                <span className="text-sm opacity-80">Emergency Care</span>
+                    <div className="relative">
+                        <div className="grid gap-8">
+                            <div className="group relative">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
+                                <button
+                                    onClick={() => window.location.href = '/doctor-dashboard'}
+                                    className="relative w-full flex items-center justify-between bg-white rounded-xl p-8 transition-transform duration-300 transform hover:-translate-y-1"
+                                >
+                                    <div className="flex items-center">
+                                        <div className="bg-blue-100 p-3 rounded-lg mr-6">
+                                            <UserCircle className="w-8 h-8 text-blue-600" />
+                                        </div>
+                                        <div className="text-left">
+                                            <h3 className="text-2xl font-bold text-gray-900 mb-1">Doctor Login</h3>
+                                            <p className="text-gray-600">Access your medical dashboard</p>
+                                        </div>
+                                    </div>
+                                    <ArrowRight className="w-6 h-6 text-blue-600 transform group-hover:translate-x-2 transition-transform" />
+                                </button>
+                            </div>
+
+                            <div className="group relative">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
+                                <button
+                                    onClick={() => window.location.href = '/patient-dashboard'}
+                                    className="relative w-full flex items-center justify-between bg-white rounded-xl p-8 transition-transform duration-300 transform hover:-translate-y-1"
+                                >
+                                    <div className="flex items-center">
+                                        <div className="bg-purple-100 p-3 rounded-lg mr-6">
+                                            <Users className="w-8 h-8 text-purple-600" />
+                                        </div>
+                                        <div className="text-left">
+                                            <h3 className="text-2xl font-bold text-gray-900 mb-1">Patient Login</h3>
+                                            <p className="text-gray-600">View your health records</p>
+                                        </div>
+                                    </div>
+                                    <ArrowRight className="w-6 h-6 text-purple-600 transform group-hover:translate-x-2 transition-transform" />
+                                </button>
                             </div>
                         </div>
+                        <div className="absolute -top-10 -right-10 w-20 h-20 bg-blue-500 rounded-full blur-xl opacity-20"></div>
+                        <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-purple-500 rounded-full blur-xl opacity-20"></div>
                     </div>
                 </div>
             </div>
@@ -107,4 +125,5 @@ const Hero = () => {
         </section>
     );
 };
+
 export default Hero;
