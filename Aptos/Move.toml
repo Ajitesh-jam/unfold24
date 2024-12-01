@@ -1,15 +1,16 @@
 [package]
-name = "medblock"
+name = "Aptos"
 version = "1.0.0"
 authors = []
 
 [addresses]
+hello_blockchain = "0x80ebdd65a19a106fdf82d7515e9cb0fbf73577eab2dfc8631b0341128fe32909"
 
 [dev-addresses]
 
 [dependencies.AptosFramework]
 git = "https://github.com/aptos-labs/aptos-framework.git"
-rev = "mainnet"
+rev = "testnet"
 subdir = "aptos-framework"
 
 [dev-dependencies]
