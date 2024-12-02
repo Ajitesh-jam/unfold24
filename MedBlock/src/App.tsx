@@ -10,6 +10,7 @@ import Contact from './components/home/Contact';
 import Footer from './components/layout/Footer';
 import DoctorDashboard from './components/dashboards/DoctorDashboard';
 import PatientDashboard from './components/dashboards/PatientDashboard';
+import DoctorLoginModal from './components/modals/DoctorLoginModal';
 
 function App() {
   return (
