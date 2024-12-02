@@ -11,7 +11,7 @@ import {
     LogIn
 } from 'lucide-react';
 import DoctorLoginModal from '../modals/DoctorLoginModal';
-import PatientLoginModal from '../modals/PatientLoginModal';
+// import PatientLoginModal from '../modals/PatientLoginModal';
 
 // Login Modal Component
 const LoginModal = ({ isOpen, onClose, onLogin, type }: {
@@ -101,7 +101,7 @@ const LoginModal = ({ isOpen, onClose, onLogin, type }: {
                     {type === 'doctor' ? (
                         <DoctorLoginModal isOpen={isOpen} onClose={onClose} />
                     ) : (
-                        <PatientLoginModal isOpen={isOpen} onClose={onClose} />
+                        <></>
                     )}
                 </div>
             </div>
