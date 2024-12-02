@@ -10,11 +10,13 @@ import Contact from './components/home/Contact';
 import Footer from './components/layout/Footer';
 import DoctorDashboard from './components/dashboards/DoctorDashboard';
 import PatientDashboard from './components/dashboards/PatientDashboard';
-import DoctorLoginModal from './components/modals/DoctorLoginModal';
+import { BuildType, OktoProvider } from 'okto-sdk-react';
 
+const OKTO_CLIENT_API_KEY = "8a001bd6-0804-4284-805c-b8191c07bae9";
 function App() {
   return (
     <Router>
+      <OktoProvider apiKey={OKTO_CLIENT_API_KEY} buildType={BuildType.SANDBOX}>
       <Routes>
         <Route
           path="/"
@@ -36,6 +38,7 @@ function App() {
         <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
         <Route path="/patient-dashboard" element={<PatientDashboard />} />
       </Routes>
+      </OktoProvider>
     </Router>
   );
 }
