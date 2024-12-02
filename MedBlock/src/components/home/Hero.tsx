@@ -10,6 +10,8 @@ import {
     X,
     LogIn
 } from 'lucide-react';
+import DoctorLoginModal from '../modals/DoctorLoginModal';
+import PatientLoginModal from '../modals/PatientLoginModal';
 
 // Login Modal Component
 const LoginModal = ({ isOpen, onClose, onLogin, type }: {
@@ -33,6 +35,48 @@ const LoginModal = ({ isOpen, onClose, onLogin, type }: {
     };
 
     return (
+        // <div className="fixed inset-0 z-50 overflow-y-auto">
+        //     <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
+        //     <div className="min-h-screen px-4 flex items-center justify-center">
+        //         <div className="relative bg-white rounded-xl shadow-xl p-8 max-w-md w-full">
+        //             <button
+        //                 onClick={onClose}
+        //                 className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+        //             >
+        //                 <X className="w-6 h-6" />
+        //             </button>
+
+        //             <div className="text-center mb-6">
+        //                 <div className="bg-blue-100 rounded-full p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+        //                     <LogIn className="w-8 h-8 text-blue-600" />
+        //                 </div>
+        //                 <h2 className="text-2xl font-bold mb-2">
+        //                     {type === 'doctor' ? 'Doctor Login' : 'Patient Login'}
+        //                 </h2>
+        //                 <p className="text-gray-600">Enter your wallet address to continue</p>
+        //             </div>
+
+        //             <form onSubmit={handleSubmit} className="space-y-4">
+        //                 <div>
+        //                     <input
+        //                         type="text"
+        //                         value={walletAddress}
+        //                         onChange={(e) => setWalletAddress(e.target.value)}
+        //                         placeholder="Wallet Address"
+        //                         className="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 outline-none"
+        //                     />
+        //                     {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+        //                 </div>
+        //                 <button
+        //                     type="submit"
+        //                     className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+        //                 >
+        //                     Login
+        //                 </button>
+        //             </form>
+        //         </div>
+        //     </div>
+        // </div>
         <div className="fixed inset-0 z-50 overflow-y-auto">
             <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
             <div className="min-h-screen px-4 flex items-center justify-center">
@@ -54,24 +98,11 @@ const LoginModal = ({ isOpen, onClose, onLogin, type }: {
                         <p className="text-gray-600">Enter your wallet address to continue</p>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                        <div>
-                            <input
-                                type="text"
-                                value={walletAddress}
-                                onChange={(e) => setWalletAddress(e.target.value)}
-                                placeholder="Wallet Address"
-                                className="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 outline-none"
-                            />
-                            {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
-                        </div>
-                        <button
-                            type="submit"
-                            className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                        >
-                            Login
-                        </button>
-                    </form>
+                    {type === 'doctor' ? (
+                        <DoctorLoginModal isOpen={isOpen} onClose={onClose} />
+                    ) : (
+                        <PatientLoginModal isOpen={isOpen} onClose={onClose} />
+                    )}
                 </div>
             </div>
         </div>
@@ -125,7 +156,7 @@ const Hero = () => {
 
                         {/* Features */}
                         <div className="flex flex-wrap gap-4 mb-12">
-                            {[
+                            {[ 
                                 { icon: <Shield className="w-5 h-5" />, text: "Secure Records" },
                                 { icon: <Heart className="w-5 h-5" />, text: "24/7 Care" },
                                 { icon: <Clock className="w-5 h-5" />, text: "Fast Access" }
