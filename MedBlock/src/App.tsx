@@ -10,7 +10,7 @@ import Contact from './components/home/Contact';
 import Footer from './components/layout/Footer';
 import DoctorDashboard from './components/dashboards/DoctorDashboard';
 import PatientDashboard from './components/dashboards/PatientDashboard';
-import DoctorLoginModal from './components/modals/DoctorLoginModal';
+import PatientDetailsPage from './components/dashboards/PatientDetailsPage';
 
 function App() {
   return (
@@ -35,6 +35,7 @@ function App() {
         />
         <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
         <Route path="/patient-dashboard" element={<PatientDashboard />} />
+        <Route path="/patient/:aadhar" element={<PatientDetailsPage />} />
       </Routes>
     </Router>
   );
